@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to JS Tutorials</h1>
+    <hr>
+    <div>
+        <ul id="students">
+
+        </ul>
+    </div>
+
+    <script>
+        var students = [
+            {
+                "id": "1",
+                "name": "Gaurav",
+                "roll_no": "1",
+                "class": "First"
+            },
+            {
+                "id": "2",
+                "name": "Rishi",
+                "roll_no": "2",
+                "class": "Second"
+            },
+            {
+                "id": "3",
+                "name": "Gurpreet",
+                "roll_no": "4",
+                "class": "Third"
+            },
+            {
+                "id": "4",
+                "name": "Jasmine",
+                "roll_no": "5",
+                "class": "Fourth"
+            },
+        ];
+
+        var el = document.getElementById('students');
+        var resultHtml = '';
+
+        students.forEach(element => {
+            resultHtml += '<li>' + element.name + '</li>';
+        });
+
+        el.innerHTML = resultHtml;
+
+    </script>
+</body>
+
+</html>
