@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Welcome to JS Tutorials</h1>
-    <hr>
-    <div>
-        <ul id="students">
+    <hr />
+    <label for="search">Search: </label>
+    <input type="text" id="search" onblur="search()" />
 
-        </ul>
+    <div>
+        <h3>Search Results: </h3>
+      <ul id="searchResults"></ul>
+      <hr/>
+        <h3>All Records</h3>
+      <ul id="students"></ul>
     </div>
 
     <script>
-        var students = [
-            {
-                "id": "1",
-                "name": "Gaurav",
-                "roll_no": "1",
-                "class": "First"
-            },
-            {
-                "id": "2",
-                "name": "Rishi",
-                "roll_no": "2",
-                "class": "Second"
-            },
-            {
-                "id": "3",
-                "name": "Gurpreet",
-                "roll_no": "4",
-                "class": "Third"
-            },
-            {
-                "id": "4",
-                "name": "Jasmine",
-                "roll_no": "5",
-                "class": "Fourth"
-            },
-        ];
+      function search() {
+        var searchText = document.getElementById("search").value;
 
-        var el = document.getElementById('students');
-        var resultHtml = '';
+        var searchResults = students.filter((x) => {
+          return x.name.toLowerCase().search(searchText.toLowerCase()) >= 0;
+        });
 
-        students.forEach(element => {
-            resultHtml += '<li>' + element.name + '</li>';
+        console.log(searchResults);
+
+        var el = document.getElementById("searchResults");
+        var resultHtml = "";
+
+        searchResults.forEach((element) => {
+          resultHtml += "<li>" + element.name + "</li>";
         });
 
         el.innerHTML = resultHtml;
+      }
 
+      var students = [
+        {
+          id: "1",
+          name: "Gaurav Luthra",
+          roll_no: "1",
+          class: "First",
+        },
+        {
+          id: "1",
+          name: "Gaurav Madaan",
+          roll_no: "1",
+          class: "First",
+        },
+        {
+          id: "2",
+          name: "Rishi Gautam",
+          roll_no: "2",
+          class: "Second",
+        },
+        {
+          id: "3",
+          name: "Gurpreet",
+          roll_no: "4",
+          class: "Third",
+        },
+        {
+          id: "4",
+          name: "Jasmine",
+          roll_no: "5",
+          class: "Fourth",
+        },
+      ];
+
+      var el = document.getElementById("students");
+      var resultHtml = "";
+
+      students.forEach((element) => {
+        resultHtml += "<li>" + element.name + "</li>";
+      });
+
+      el.innerHTML = resultHtml;
     </script>
-</body>
-
+  </body>
 </html>
