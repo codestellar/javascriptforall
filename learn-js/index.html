@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn with Codestellar</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript for All</h1>
+    <hr />
+    <input
+      type="text"
+      name="search"
+      onblur="handleChange()"
+      id="search"
+      value="Gaurav"
+    />
+
+    <ol id="results">
+    </ol>
+
+    <script>
+      function handleChange() {
+        var searchText = document.getElementById("search").value;
+        console.log(searchText);
+
+        var searchResults = students.filter(s => {
+            return s.name.toLowerCase().search(searchText.toLowerCase()) == 0;
+        });
+
+        console.log(searchResults);
+        var results = document.getElementById('results');     
+        results.innerHTML = "";
+        for (let index = 0; index < searchResults.length; index++) {
+        results.innerHTML += "<li>" + searchResults[index].name + '</li>';          
+      }
+      }
+
+      var students = [
+          {
+              "id": 1,
+              "name": "Gaurav"
+          },
+          {
+              "id": 2,
+              "name": "Gautam"
+          },
+          {
+              "id": 3,
+              "name": "Rishi"
+          },  
+          {
+              "id": 4,
+              "name": "Sunny"
+          },        
+      ];
+
+      var results = document.getElementById('results');      
+
+      for (let index = 0; index < students.length; index++) {
+        results.innerHTML += "<li>" + students[index].name + '</li>';          
+      }
+    </script>
+  </body>
+</html>
