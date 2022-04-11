@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./conversational-form.min.js"></script>
+    <title>Conversational Form</title>
+    <style>
+      #cf-context {
+        width: 40vw;
+        height: 40vh;
+        border: 1px solid #000000;
+        float: right;
+      }
+      #form {
+        height: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="form">
+        <input type="text" name="name" cf-questions="What is your name?" />
+        <input type="text" name="email" cf-questions="What is your email?" />
+        <input
+          type="text"
+          name="phoneNumber"
+          cf-questions="What is your Phone Number?"
+        />
+      </form>
+      <div id="cf-context" role="cf-context" cf-context></div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        var conversationalForm =
+          window.cf.ConversationalForm.startTheConversation({
+            formEl: document.getElementById("form"),
+            context: document.getElementById("cf-context"),
+            preventAutoFocus: true,
+            submitCallback: function () {
+              var formDataSerialized = conversationalForm.getFormData(true);
+
+              $.ajax({
+                url: "https://engdhde3ok54k.x.pipedream.net",
+                type: "POST",
+                data: formDataSerialized,
+                dataType: "json",
+                showProgressBar: "true",
+                success: function (data) {
+                  window.ConversationalForm.addRobotChatResponse(
+                    "Alright, you are done."
+                  );
+                },
+                error: (err) => {
+                  console.log(err);
+                },
+              });
+            },
+          });
+      };
+    </script>
+  </body>
+</html>
