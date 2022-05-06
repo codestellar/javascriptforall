@@ -16,10 +16,10 @@ function getAmortization(capital, pay, periods, interest) {
 
     function updateTable(pay, amortizationCapital) {
       amortizationTable.push({
-        period: (amortizationTable.length + 1),
+        period: amortizationTable.length + 1,
         amortizationInterest: amortizationInterest,
         amortizationCapital: amortizationCapital,
-        remainingCapital: capital - amortizationCapital
+        remainingCapital: capital - amortizationCapital,
       });
     }
   };
