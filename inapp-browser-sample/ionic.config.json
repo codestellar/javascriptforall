@@ -1,0 +1,7 @@
+{
+  "name": "inapp-browser-sample",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
