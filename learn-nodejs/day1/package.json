@@ -1,0 +1,14 @@
+{
+  "name": "day1",
+  "version": "1.0.0",
+  "description": "## Day 1 - Understanding what is nodejs - Importing modules using require('http'), require('fs') - Creating a Server (Refer create-server.js) - Global Functions __dirname, __filename - reading a file synchronnously - reading a file asynchronously - writing a file - Exporting a module - Initializing package.json using npm --init - using node package manager - Understanding built in modules in node and external packages like express framework - Understanding what is express",
+  "main": "create-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1"
+  }
+}
