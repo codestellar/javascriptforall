@@ -9,6 +9,8 @@ console.log(readFileResult);
 
 // Reading and Writing asynchronously.
 
-writeFile('./resultAsync.txt','NextGenApps Training Session', (err, result) => {
+writeFile('./resultAsync.txt','NextGenApps Training Session',{
+    flag: 'a'
+}, (err, result) => {
     console.log(result);
 })

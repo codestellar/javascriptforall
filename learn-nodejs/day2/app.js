@@ -12,7 +12,7 @@ app.use('/api', register);
 
 start = async () => {
     // Connect DB
-    await connectDB('mongodb+srv://gaurav:gaurav@cluster0.2xsinro.mongodb.net/nextgen?retryWrites=true&w=majority');
+    await connectDB('mongodb+srv://gaurav:gaurav@cluster0.re35adw.mongodb.net/nextgen?retryWrites=true&w=majority');
 
     // Start Server
     app.listen(port, () => {
