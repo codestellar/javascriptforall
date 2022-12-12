@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add React to Website -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      const rootNode = document.getElementById("root");
+
+      const root = ReactDOM.createRoot(rootNode);
+
+      const HelloWorld = (props) => {
+        return React.createElement(
+          "button",
+          {
+            onClick: () => {
+              return window.alert("Hello World! Learn React with." + props.name);
+            },
+          },
+          "Hello World"
+        );
+      };
+
+      root.render(React.createElement(HelloWorld, { name: "codestellar" }));
+    </script>
+  </body>
+</html>
